@@ -1,4 +1,5 @@
 # namespace-networking
+![digram image](https://github.com/ahmedhadhoud/namespace-networking/blob/95366e51100b93196fde56995b0f01566d07d0c1/network-ns.drawio.png)
 ## what is network namespace?
 network namespace is making aprivate virtual network that is isolated from another network 
 ## goal of this toturial is to make connection between differant namespace and make them connected to the internet.
