@@ -32,6 +32,6 @@ network namespace is making aprivate virtual network that is isolated from anoth
 
   ### 5- we want to reach to the namespaces from our local host  <br />
 remeber that namespaces are in differnet network rather than the local host network so what we want is to make link between the two networks
-in the local host 
-`ip addr add 192.168.15.5/24 dev v-net-0`**  <br />
+in the local host <br />
+`ip addr add 192.168.15.5/24 dev v-net-0` <br />
      
