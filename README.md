@@ -13,7 +13,7 @@ network namespace is making aprivate virtual network that is isolated from anoth
 
 ### 4- to make coonectivity between namespaces
   #### - we need to craete virtual switch inside the host ( using differnt solution here we will use the native solution linux bridge )
-      to create the virtual switch<br /> `ip link add v-net-0 type bridge`  <br />
+      to create the virtual switch `ip link add v-net-0 type bridge`  <br />
       to bring this interface up **ip link set v-net-0 up**  <br />
       to make alink between namespace and virtual switch **ip link add veth-red type veth peer name veth-red-br**  <br />
       to attach the link to the namespace **ip link set veth-red red**  <br />
