@@ -15,7 +15,7 @@ network namespace is making aprivate virtual network that is isolated from anoth
 #### - we need to craete virtual switch inside the host ( using differnt solution here we will use the native solution linux bridge )
 -  to create the virtual switch  <br />
 
-     ip link add v-net-0 type bridge  <br />
+     `ip link add v-net-0 type bridge`  <br />
 
 -   to bring this interface up   <br />
 
