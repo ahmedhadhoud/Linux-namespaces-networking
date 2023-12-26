@@ -19,27 +19,27 @@ network namespace is making aprivate virtual network that is isolated from anoth
 
 -   to bring this interface up   <br />
 
-`ip link set v-net-0 up` <br />
+     `ip link set v-net-0 up` <br />
 
 -  to make alink between namespace and virtual switch <br />
 
-`ip link add veth-red type veth peer name veth-red-br`    <br />
+     `ip link add veth-red type veth peer name veth-red-br`    <br />
 
 -  to attach the link to the namespace <br />
 
- `ip link set veth-red red`  <br />
+     `ip link set veth-red red`  <br />
  
 -  to attach the link to the virtual switch <br />
 
-`ip link set veth-red-br master v-net-0`  <br />
+    `ip link set veth-red-br master v-net-0`  <br />
 
 -  to attach ip address to the interface of the namespace <br />
 
-`ip -n red addr add 192.168.15.1 dev veth-red` <br />
+    `ip -n red addr add 192.168.15.1 dev veth-red` <br />
 
 -  turn the virual ethernet of red namespace app <br />
 
-`ip -n red link set veth-red up`  <br />
+     `ip -n red link set veth-red up`  <br />
 
 -  follow the same procedure to connect the reset namespace to the virtual network we have craeted   <br />
 
