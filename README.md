@@ -61,7 +61,7 @@ first we need to make an gateway for the red namespace to be reachable from outs
    
 now red namespace can reach the other host but no reply will go from red namespace to outer hosts as in the ip table of namespace has no route to outside the local network so we will use NAT to forward traffic to outside   <br />  
 
-    `iptables -t nat -A POSTROUTING -s 192.168.15.0/24 -j MASQUERADE `  <br />   
+  `iptables -t nat -A POSTROUTING -s 192.168.15.0/24 -j MASQUERADE`  <br />   
 
  ### 7- we need the red namespace to connect to the internet  <br />
 
