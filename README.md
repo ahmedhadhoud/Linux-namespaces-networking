@@ -48,7 +48,30 @@ network namespace is making aprivate virtual network that is isolated from anoth
 
 
   ### 5- we want to reach to the namespaces from our local host  <br />
+  
 remeber that namespaces are in differnet network rather than the local host network so what we want is to make link between the two networks
 in the local host <br />
 `ip addr add 192.168.15.5/24 dev v-net-0` <br />
-     
+
+### 6- if you want the red namespace to reach another host in the local network <br />
+
+first we need to make an gateway for the red namespace to be reachable from outside it's network where the local host is the gateway of our namespaces <br /> 
+
+   `ip netns exec red route add 192.168.1.0/24 via 192.168.15.5` <br />
+   
+now red namespace can reach the other host but no reply will go from red namespace to outer hosts as in the ip table of namespace has no route to outside the local network so we will use NAT to forward traffic to outside   <br />  
+
+    `iptables -t nat -A POSTROUTING -s 192.168.15.0/24 -j MASQUERADE `  <br />   
+
+ ### 7- we need the red namespace to connect to the internet  <br />
+
+first thing we want the red namespace to reach the internet so we will add route in the route table of red namespace <br /> 
+
+   `ip netns exec red ip route add default via 192.168.15.5` <br />
+
+ next we need the internet to access the app in the namespace via pot 80 using portforward method  <br />  
+
+   ` iptables -t nat -A PREROUTTING --dport 80 --to-destination 192.168.15.1:80 -j DNAT`
+
+ 
+ 
