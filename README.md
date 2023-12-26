@@ -5,3 +5,8 @@ network namespace is making aprivate virtual network that is isolated from anoth
 1- craeting namespaces <br />
     **ip netns add namespace-name** 
 
+2- to list all network namespace  <br />
+     **ip netns**
+
+ 3- to view the network inetrface within the namespace  <br />
+     **ip netns excec namespace_name ip link**
