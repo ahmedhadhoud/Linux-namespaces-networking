@@ -9,7 +9,7 @@ network namespace is making aprivate virtual network that is isolated from anoth
        sudo ip netns
 
 ### 3- to view the network inetrface within the namespace  <br />
-      ip netns excec namespace_name ip link 
+         ip netns excec namespace_name ip link 
 
 ### 4- to make coonectivity between namespaces
 #### - we need to craete virtual switch inside the host ( using differnt solution here we will use the native solution linux bridge )
